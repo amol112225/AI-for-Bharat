@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 
 from database import engine, Base
@@ -27,3 +27,16 @@ app.include_router(summary.router, prefix="/summary", tags=["Summary"])
 @app.get("/")
 def read_root():
     return {"message": "Welcome to AP Hunter AI Voice Agent API"}
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    print("WebSocket connected!")
+    try:
+        while True:
+            # Receive audio chunk from frontend
+            data = await websocket.receive_bytes()
+            # Echo it back so the frontend can play it
+            await websocket.send_bytes(data)
+    except WebSocketDisconnect:
+        print("WebSocket disconnected")

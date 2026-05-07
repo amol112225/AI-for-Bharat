@@ -6,6 +6,8 @@ import VoiceConsole from './pages/VoiceConsole';
 import RMHandoff from './pages/RMHandoff';
 import WhatsAppAutomation from './pages/WhatsAppAutomation';
 import Analytics from './pages/Analytics';
+import LeadInterface from './pages/LeadInterface';
+import RMDashboard from './pages/RMDashboard';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="handoff" element={<RMHandoff />} />
           <Route path="whatsapp" element={<WhatsAppAutomation />} />
           <Route path="analytics" element={<Analytics />} />
+          <Route path="lead" element={<LeadInterface />} />
+          <Route path="rm" element={<RMDashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>

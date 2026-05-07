@@ -12,8 +12,9 @@ const navItems = [
   { name: 'Lead Queue', path: '/queue', icon: Users },
   { name: 'Voice Console', path: '/console', icon: Mic },
   { name: 'RM Handoff', path: '/handoff', icon: UserCheck },
-  { name: 'WhatsApp', path: '/whatsapp', icon: MessageSquare },
   { name: 'Analytics', path: '/analytics', icon: BarChart3 },
+  { name: 'Lead Interface', path: '/lead', icon: Mic },
+  { name: 'RM Dashboard', path: '/rm', icon: UserCheck },
 ];
 
 export default function Sidebar() {
@@ -57,25 +58,7 @@ export default function Sidebar() {
         ))}
       </div>
       
-      <div className="p-4 mt-auto">
-        <div className="rounded-xl bg-white/5 border border-white/10 p-4 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-16 h-16 bg-purple-500/20 blur-xl rounded-full" />
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#00f0ff]" />
-            <span className="text-xs text-slate-300 font-medium">System Online</span>
-          </div>
-          <div className="mt-3 grid grid-cols-2 gap-2 text-[10px]">
-            <div>
-              <p className="text-slate-500">Latency</p>
-              <p className="text-white font-mono">12ms</p>
-            </div>
-            <div>
-              <p className="text-slate-500">GPU</p>
-              <p className="text-white font-mono">34%</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   );
 }
